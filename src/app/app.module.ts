@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
-
 import { ToastrModule } from 'ngx-toastr';
-
 import { AppComponent } from './app.component';
 import { EventsListComponent } from './events/events-list/events-list.component';
 import { EventThumbnailComponent } from './event/event-thumbnail/event-thumbnail.component';
@@ -15,6 +13,7 @@ import { EventComponent } from './create/event/event.component';
 
 import { ErrorComponent } from './errors/error/error.component';
 
+import { EventListResolver } from './services/event-list-resolver.service';
 import { EventRouteActivator } from './event-route-activator.service';
 
 @NgModule({
@@ -35,6 +34,7 @@ import { EventRouteActivator } from './event-route-activator.service';
   ],
   providers: [
     EventRouteActivator,
+    EventListResolver,
     {
       provide: 'canDeactivateCreateEvent',
       useValue: checkDirtyState
