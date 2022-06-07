@@ -21,6 +21,7 @@ import { RouterModule } from '@angular/router';
 
 import { EventListResolver } from './services/event-list-resolver.service';
 import { EventRouteActivator } from './event-route-activator.service';
+import { SessionListComponent } from './session-list/session-list/session-list.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { EventRouteActivator } from './event-route-activator.service';
     EventComponent,
     ErrorComponent,
     CreateComponent,
+    SessionListComponent,
   ],
   imports: [
     BrowserModule,

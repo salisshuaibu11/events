@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { ISession } from 'src/app/shared/event.model';
@@ -9,6 +9,9 @@ import { ISession } from 'src/app/shared/event.model';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
+  @Output() saveNewSession = new EventEmitter();
+  @Output() cancelAddSession = new EventEmitter();
+
   newSessionForm: FormGroup;
   name: FormControl;
   presenter: FormControl;
@@ -44,5 +47,11 @@ export class CreateComponent implements OnInit {
       abstract: formValues.abstract,
       voters: []
     }
+
+    this.saveNewSession.emit(session);
+  }
+
+  cancel() {
+    this.cancelAddSession.emit();
   }
 }
