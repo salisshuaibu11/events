@@ -6,5 +6,6 @@ export * from "./events/events-list/events-list.component";
 export * from "./nav/navbar/navbar.component";
 export * from "./session/create/create.component";
 export * from "./errors/error/error.component"
+export * from "./shared/duration.pipe";
 
 export * from "./event-route-activator.service";

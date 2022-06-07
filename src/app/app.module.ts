@@ -13,7 +13,8 @@ import {
   EventThumbnailComponent,
   EventsListComponent,
   CreateComponent,
-  ErrorComponent
+  ErrorComponent,
+  DurationPipe
 } from "./index";
 
 import { appRoutes } from 'src/routes';
@@ -36,6 +37,7 @@ import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-
     CreateComponent,
     SessionListComponent,
     CollapsibleWellComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,
