@@ -4,6 +4,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
 import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import {
   EventComponent,
   EventDetailsComponent,
@@ -33,6 +35,8 @@ import { EventRouteActivator } from './event-route-activator.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     ToastrModule.forRoot()
