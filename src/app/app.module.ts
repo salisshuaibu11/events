@@ -11,14 +11,13 @@ import {
   EventDetailsComponent,
   NavbarComponent,
   EventThumbnailComponent,
-  EventsListComponent
+  EventsListComponent,
+  CreateComponent,
+  ErrorComponent
 } from "./index";
 
 import { appRoutes } from 'src/routes';
 import { RouterModule } from '@angular/router';
-
-
-import { ErrorComponent } from './errors/error/error.component';
 
 import { EventListResolver } from './services/event-list-resolver.service';
 import { EventRouteActivator } from './event-route-activator.service';
@@ -32,6 +31,7 @@ import { EventRouteActivator } from './event-route-activator.service';
     EventDetailsComponent,
     EventComponent,
     ErrorComponent,
+    CreateComponent,
   ],
   imports: [
     BrowserModule,
