@@ -14,7 +14,8 @@ import {
   EventsListComponent,
   CreateComponent,
   ErrorComponent,
-  DurationPipe
+  DurationPipe,
+  ModalTriggerDirective
 } from "./index";
 
 import { appRoutes } from 'src/routes';
@@ -24,6 +25,7 @@ import { EventListResolver } from './services/event-list-resolver.service';
 import { EventRouteActivator } from './event-route-activator.service';
 import { SessionListComponent } from './session-list/session-list/session-list.component';
 import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
+import { SimpeModalComponent } from './common/simpe-modal/simpe-modal.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-
     CreateComponent,
     SessionListComponent,
     CollapsibleWellComponent,
-    DurationPipe
+    DurationPipe,
+    SimpeModalComponent,
+    ModalTriggerDirective
   ],
   imports: [
     BrowserModule,

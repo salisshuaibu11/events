@@ -9,3 +9,4 @@ export * from "./errors/error/error.component"
 export * from "./shared/duration.pipe";
 
 export * from "./event-route-activator.service";
+export * from "./common/modalTrigger.directive";

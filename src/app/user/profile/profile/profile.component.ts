@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { AuthService } from 'src/app/services/auth.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-profile',
@@ -16,7 +17,8 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -41,9 +43,10 @@ export class ProfileComponent implements OnInit {
         formValues.firstName,
         formValues.lastName
       );
+      this.toastr.success("Profile Saved");
     }
 
-    this.router.navigate(['events'])
+    //this.router.navigate(['events'])
   }
 
   validateFirstName() {
