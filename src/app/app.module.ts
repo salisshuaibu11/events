@@ -15,7 +15,8 @@ import {
   CreateComponent,
   ErrorComponent,
   DurationPipe,
-  ModalTriggerDirective
+  ModalTriggerDirective,
+  LocationValidator
 } from "./index";
 
 import { appRoutes } from 'src/routes';
@@ -42,6 +43,7 @@ import { UpvoteComponent } from './upvote/upvote/upvote.component';
     CollapsibleWellComponent,
     DurationPipe,
     SimpeModalComponent,
+    LocationValidator,
     ModalTriggerDirective,
     UpvoteComponent
   ],
