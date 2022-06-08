@@ -26,6 +26,7 @@ import { EventRouteActivator } from './event-route-activator.service';
 import { SessionListComponent } from './session-list/session-list/session-list.component';
 import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
 import { SimpeModalComponent } from './common/simpe-modal/simpe-modal.component';
+import { UpvoteComponent } from './upvote/upvote/upvote.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SimpeModalComponent } from './common/simpe-modal/simpe-modal.component'
     CollapsibleWellComponent,
     DurationPipe,
     SimpeModalComponent,
-    ModalTriggerDirective
+    ModalTriggerDirective,
+    UpvoteComponent
   ],
   imports: [
     BrowserModule,
