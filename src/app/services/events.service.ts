@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Subject, Observable, of, catchError } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { IEvent, ISession } from '../shared/event.model';
 
@@ -331,18 +331,14 @@ export class EventsService {
   getEvent(id: number): Observable<IEvent> {
     return this.http
       .get<IEvent>(`/api/events/${id}`)
-      .pipe(catchError(this.handleError<IEvent>("getEvents")))
+      .pipe(catchError(this.handleError<IEvent>("getEvent")))
   }
 
   saveEvent(event: any) {
-    event.id = 999;
-    event.sessions = [];
-    this.events.push(event);
-  }
-
-  updateEvent(event: any) {
-    let index = this.events.findIndex((x: any) => x.id = event.id);
-    this.events[index] = event;
+    let options = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
+    return this.http
+      .put<IEvent>('api/events', event, options)
+      .pipe(catchError(this.handleError<IEvent>("saveEvents")))
   }
 
   searchSessions(searchTerm: string) {
