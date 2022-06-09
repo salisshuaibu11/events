@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   userName: string;
   password: string;
+  loginInvalid = false;
   constructor(
     private authService: AuthService,
     private router: Router
@@ -19,8 +20,14 @@ export class LoginComponent implements OnInit {
   }
 
   login(formValue: any) {
-    this.authService.loginUser(formValue.userName, formValue.password);
-    this.router.navigate(['events'])
+    this.authService.loginUser(formValue.userName, formValue.password)
+      .subscribe((response: any) => {
+        if (!response) {
+          this.loginInvalid = true;
+        } else {
+          this.router.navigate(['events'])
+        }
+      })
   }
 
   cancel() {
