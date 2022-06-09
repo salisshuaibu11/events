@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EventsService } from 'src/app/services/events.service';
 import { ActivatedRoute } from '@angular/router';
 
-import { ISession } from 'src/app/shared/event.model';
+import { IEvent, ISession } from 'src/app/shared/event.model';
 
 @Component({
   selector: 'app-event-details',
@@ -20,7 +20,10 @@ export class EventDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.event = this.eventService.getEvent(+this.route.snapshot.params['id']);
+    this.route.data.forEach((data: any) => {
+      this.event = data['event'];
+      this.addMode = false;
+    })
   }
 
   addSession() {

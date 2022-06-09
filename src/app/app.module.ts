@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
 import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from "@angular/common/http";
+
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -16,14 +18,14 @@ import {
   ErrorComponent,
   DurationPipe,
   ModalTriggerDirective,
-  LocationValidator
+  LocationValidator,
+  EventResolverService
 } from "./index";
 
 import { appRoutes } from 'src/routes';
 import { RouterModule } from '@angular/router';
 
 import { EventListResolver } from './services/event-list-resolver.service';
-import { EventRouteActivator } from './event-route-activator.service';
 import { SessionListComponent } from './session-list/session-list/session-list.component';
 import { CollapsibleWellComponent } from './common/collapsible-well/collapsible-well.component';
 import { SimpeModalComponent } from './common/simpe-modal/simpe-modal.component';
@@ -50,13 +52,14 @@ import { UpvoteComponent } from './upvote/upvote/upvote.component';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
   providers: [
-    EventRouteActivator,
+    EventResolverService,
     EventListResolver,
     {
       provide: 'canDeactivateCreateEvent',

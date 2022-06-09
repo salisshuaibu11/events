@@ -9,5 +9,5 @@ export * from "./errors/error/error.component"
 export * from "./shared/duration.pipe";
 
 export * from "./create/event/location-validator.directive";
-export * from "./event-route-activator.service";
+export * from "./services/event-resolver.service";
 export * from "./common/modalTrigger.directive";
